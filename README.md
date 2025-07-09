@@ -63,14 +63,33 @@ node-red-mcp-server
 2. Configure Claude Desktop:
    - Open Claude Desktop app
    - Go to Settings → Advanced → Tool Configuration
-   - Add a new tool configuration:
+   - Add a new tool configuration. You can use `npx` to run the server without manual installation. This is often the easiest way to get started:
+
+   ```json
+   {
+     "node-red": {
+       "command": "npx",
+       "args": [
+         "node-red-mcp-server"
+       ],
+       "env": {
+         "NODE_RED_URL": "http://your-node-red-url:1880",
+         "NODE_RED_TOKEN": "your-token-if-needed"
+       }
+     }
+   }
+   ```
+   - Ensure `NODE_RED_URL` points to your Node-RED instance.
+   - Set `NODE_RED_TOKEN` if your Node-RED instance requires authentication.
+
+   Alternatively, if you have installed the server globally or locally and know the path to the script, you can configure it like this:
    ```json
    {
      "node-red": {
        "command": "node",
        "args": [
-         "/path/to/node-red-mcp-server/bin/node-red-mcp-server.mjs",
-         "--verbose"
+         "/path/to/node-red-mcp-server/bin/node-red-mcp-server.mjs"
+         // You can add other CLI arguments here, e.g., "--verbose"
        ],
        "env": {
          "NODE_RED_URL": "http://your-node-red-url:1880",

@@ -6,7 +6,7 @@
   "main": "lib/server.mjs",
   "type": "module",
   "bin": {
-    "node-red-mcp": "./bin/node-red-mcp-server.mjs"
+    "node-red-mcp-server": "./bin/node-red-mcp-server.mjs"
   },
   "scripts": {
     "test": "echo \"No tests yet, but passing for now!\" && exit 0",
